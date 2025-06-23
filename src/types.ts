@@ -8,3 +8,4 @@ export interface Actividad {
   nombre: string;
   items: ItemChecklist[];
 }
+

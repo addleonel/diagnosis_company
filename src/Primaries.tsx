@@ -1,8 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
 import {
-  Container,
-  Row,
-  Col,
   Card,
   Table,
   Form,
@@ -11,7 +8,7 @@ import {
 import { Bar, Doughnut } from "react-chartjs-2";
 import { Chart, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend, DoughnutController, ArcElement } from "chart.js";
 import { actividadesIniciales } from "./questions"; // ✅ Importamos desde questions.ts
-import "./App.css";
+import "./CadenaValor.css";
 
 // Registramos los módulos necesarios
 Chart.register(
