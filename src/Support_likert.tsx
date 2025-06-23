@@ -135,7 +135,7 @@ const Support_likert: React.FC = () => {
                 </Table>
                 <ProgressBar
                   now={Math.round(calcularPromedio(actIndex) * 20)} // Escalado a 100%
-                  label={`${calcularPromedio(actIndex)}/5`}
+                  label={`${Math.round(calcularPromedio(actIndex) * 20)}%`}
                   className="mb-3"
                 />
               </Card.Body>
