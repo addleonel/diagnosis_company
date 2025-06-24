@@ -105,7 +105,7 @@ const Primaries: React.FC = () => {
                 <h4>{actividad.nombre}</h4>
               </Card.Header>
               <Card.Body>
-                <Table striped bordered hover>
+                <Table>
                   <thead>
                     <tr>
                       <th>Elemento</th>
@@ -161,12 +161,17 @@ const Primaries: React.FC = () => {
 
           {/* Gráfico de promedio total */}
           <div className="chart-container">
-            <h4>Promedio General (1-5)</h4>
+            <h4>Promedio General (%)</h4>
             <Doughnut
               data={{
                 labels: ["Promedio"],
                 datasets: [{
-                  data: [actividades.reduce((acc, _, i) => acc + calcularPromedio(i), 0) / actividades.length],
+                  // Convertimos el promedio general a porcentaje
+                  data: [
+                    Math.round(
+                      ((actividades.reduce((acc, _, i) => acc + calcularPromedio(i), 0) / actividades.length) * 20)
+                    )
+                  ],
                   backgroundColor: ["#2196f3"]
                 }]
               }}
@@ -174,7 +179,11 @@ const Primaries: React.FC = () => {
                 plugins: {
                   title: {
                     display: true,
-                    text: `Promedio Total: ${actividades.reduce((acc, _, i) => acc + calcularPromedio(i), 0) / actividades.length}/5`,
+                    text: `Promedio Total: ${
+                      Math.round(
+                        ((actividades.reduce((acc, _, i) => acc + calcularPromedio(i), 0) / actividades.length) * 20)
+                      )
+                    }%`,
                     font: { size: 18 }
                   }
                 }

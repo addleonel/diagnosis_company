@@ -160,27 +160,37 @@ const Support_likert: React.FC = () => {
           ))}
 
           {/* Gráfico de promedio total */}
-          <div className="chart-container">
-            <h4>Promedio General (1-5)</h4>
-            <Doughnut
-              data={{
-                labels: ["Promedio"],
-                datasets: [{
-                  data: [actividades.reduce((acc, _, i) => acc + calcularPromedio(i), 0) / actividades.length],
-                  backgroundColor: ["#2196f3"]
-                }]
-              }}
-              options={{
-                plugins: {
-                  title: {
-                    display: true,
-                    text: `Promedio Total: ${actividades.reduce((acc, _, i) => acc + calcularPromedio(i), 0) / actividades.length}/5`,
-                    font: { size: 18 }
+            <div className="chart-container">
+              <h4>Promedio General (%)</h4>
+              <Doughnut
+                data={{
+                  labels: ["Promedio"],
+                  datasets: [{
+                    // Convertimos el promedio general a porcentaje
+                    data: [
+                      Math.round(
+                        ((actividades.reduce((acc, _, i) => acc + calcularPromedio(i), 0) / actividades.length) * 20)
+                      )
+                    ],
+                    backgroundColor: ["#2196f3"]
+                  }]
+                }}
+                options={{
+                  plugins: {
+                    title: {
+                      display: true,
+                      text: `Promedio Total: ${
+                        Math.round(
+                          ((actividades.reduce((acc, _, i) => acc + calcularPromedio(i), 0) / actividades.length) * 20)
+                        )
+                      }%`,
+                      font: { size: 18 }
+                    }
                   }
-                }
-              }}
-            />
-          </div>
+                }}
+              />
+            </div>
+
         </div>
       </div>
     </>
