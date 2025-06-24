@@ -20,7 +20,7 @@ const Foda: React.FC = () => {
             backgroundColor: "#a5ffb3",
             padding: "10px",
             borderRadius: "8px",
-           }}>FODA</h1>
+           }}>Matriz FODA</h1>
         <img 
           style={
             { 

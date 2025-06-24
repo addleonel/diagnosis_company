@@ -33,7 +33,7 @@ const Sidebar: React.FC<{
             <Link to="/" onClick={onClose}>Inicio</Link>
           </li>
           <li className={location.pathname === "/foda" ? "active" : ""}>
-            <Link to="/foda" onClick={onClose}>FODA</Link>
+            <Link to="/foda" onClick={onClose}>Matriz FODA</Link>
           </li>
           <li className={location.pathname === "/cadena-de-valor" ? "active" : ""}>
             <Link to="/cadena-de-valor" onClick={onClose}>Cadena de Valor</Link>
