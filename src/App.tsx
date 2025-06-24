@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from "react-router-dom";
 import CadenaValor from "./CadenaValor";
 import HomeCadenaValor from "./HomeCadenaValor";
+import Foda from "./Foda";
 import "./App.css";
 
 const Sidebar: React.FC<{
@@ -30,6 +31,9 @@ const Sidebar: React.FC<{
         <ul>
           <li className={location.pathname === "/" ? "active" : ""}>
             <Link to="/" onClick={onClose}>Inicio</Link>
+          </li>
+          <li className={location.pathname === "/foda" ? "active" : ""}>
+            <Link to="/foda" onClick={onClose}>FODA</Link>
           </li>
           <li className={location.pathname === "/cadena-de-valor" ? "active" : ""}>
             <Link to="/cadena-de-valor" onClick={onClose}>Cadena de Valor</Link>
@@ -77,6 +81,7 @@ const App: React.FC = () => {
       <DashboardLayout>
         <Routes>
           <Route path="/" element={<HomeCadenaValor />} />
+          <Route path="/foda" element={<Foda />} />
           <Route path="/cadena-de-valor" element={<CadenaValor />} />
         </Routes>
       </DashboardLayout>
