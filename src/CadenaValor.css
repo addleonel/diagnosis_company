@@ -122,7 +122,7 @@
   background: linear-gradient(90deg, #3498db, #2ecc71);
   color: #ffffff;
   border-radius: 50px;
-  font-size: 0.875rem;
+  font-size: 0.99rem !important;
   font-weight: bold;
   display: flex;
   align-items: center;
