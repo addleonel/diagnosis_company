@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Link, useLocation } from "react
 import CadenaValor from "./CadenaValor";
 import HomeCadenaValor from "./HomeCadenaValor";
 import Foda from "./Foda";
+import Cipersonal from "./CI_personal/Cipersonal";
 import "./App.css";
 
 const Sidebar: React.FC<{
@@ -83,6 +84,8 @@ const App: React.FC = () => {
           <Route path="/" element={<HomeCadenaValor />} />
           <Route path="/foda" element={<Foda />} />
           <Route path="/cadena-de-valor" element={<CadenaValor />} />
+          <Route path="/cipersonal/" element={<Cipersonal />} />
+          <Route path="*" element={<div>404 Not Found</div>} />
         </Routes>
       </DashboardLayout>
     </Router>
